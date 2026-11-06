@@ -1,0 +1,299 @@
+
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="SheRise helps women learn, launch and grow businesses.">
+  <title>SheRise | Women Entrepreneurship Hub</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+<header class="topbar">
+  <a class="brand" href="#home"><span class="brand-mark">S</span> SheRise</a>
+  <nav>
+    <a href="#marketplace">Marketplace</a>
+    <a href="#ideas">Idea Lab</a>
+    <a href="#calculator">Calculator</a>
+    <a href="#mentorship">Mentorship</a>
+    <a href="#funding">Funding</a>
+  </nav>
+  <div class="nav-actions">
+    <span id="user-label" class="muted"></span>
+    <button id="auth-button" class="button button-small">Log in</button>
+  </div>
+  <button class="menu-toggle" id="menu-toggle" aria-label="Toggle navigation">☰</button>
+</header>
+
+<main>
+  <section id="home" class="hero">
+    <div class="hero-copy">
+      <span class="eyebrow">WOMEN • IDEAS • OPPORTUNITY</span>
+      <h1>Your idea deserves<br><em>to rise.</em></h1>
+      <p>One supportive space to turn your skills and business ideas into real opportunities. Learn, showcase your work and connect with a community that helps you grow.</p>
+      <div class="hero-actions">
+        <a class="button" href="#marketplace">Explore marketplace</a>
+        <button class="button button-light" id="start-business">List your business</button>
+      </div>
+      <div class="hero-note">
+        <span class="dot"></span>
+        Built to support women at every stage of entrepreneurship
+      </div>
+    </div>
+    <div class="hero-art">
+      <div class="art-circle">
+        <div class="art-sun"></div>
+        <div class="art-person"><span></span></div>
+        <div class="art-card card-one">✦ Your next chapter</div>
+        <div class="art-card card-two">Ideas grow here <b>↗</b></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="stats">
+    <div><strong>Learn</strong><span>Build useful skills</span></div>
+    <div><strong>Launch</strong><span>Share your business</span></div>
+    <div><strong>Connect</strong><span>Find guidance</span></div>
+    <div><strong>Grow</strong><span>Reach new customers</span></div>
+  </section>
+
+  <section class="section" id="marketplace">
+    <div class="section-heading">
+      <div>
+        <span class="eyebrow">COMMUNITY MARKETPLACE</span>
+        <h2>Made by women, <em>shared with the world.</em></h2>
+        <p>Discover products and small businesses listed by women entrepreneurs.</p>
+      </div>
+      <button class="button" id="add-listing">＋ Add your business</button>
+    </div>
+
+    <div class="toolbar">
+      <input id="market-search" type="search" placeholder="Search businesses or products" aria-label="Search marketplace">
+      <select id="category-filter" aria-label="Filter by category">
+        <option>All</option>
+        <option>Art & Crafts</option>
+        <option>Fashion</option>
+        <option>Food</option>
+        <option>Beauty</option>
+        <option>Home</option>
+        <option>Services</option>
+        <option>Other</option>
+      </select>
+    </div>
+
+    <div id="marketplace-grid" class="business-grid">
+      <p class="muted">Loading marketplace…</p>
+    </div>
+  </section>
+
+  <section class="section tinted" id="ideas">
+    <div class="section-heading">
+      <div>
+        <span class="eyebrow">START WITH WHAT YOU HAVE</span>
+        <h2>Small spark. <em>Big possibilities.</em></h2>
+        <p>Choose an interest and get starter business ideas with practical first steps.</p>
+      </div>
+    </div>
+
+    <div class="idea-panel">
+      <div class="idea-controls">
+        <label for="interest">What are you interested in?</label>
+        <select id="interest">
+          <option value="crafts">Handmade crafts</option>
+          <option value="food">Cooking and food</option>
+          <option value="fashion">Fashion and styling</option>
+          <option value="teaching">Teaching and skills</option>
+          <option value="digital">Digital skills</option>
+          <option value="beauty">Beauty and wellness</option>
+        </select>
+        <button class="button" id="generate-ideas">Generate ideas</button>
+      </div>
+      <div id="idea-results" class="idea-results">
+        <div class="idea-placeholder">✨ Your ideas will appear here. Pick an interest to begin.</div>
+      </div>
+    </div>
+
+    <div class="assistant-box">
+      <div class="assistant-icon">✦</div>
+      <div>
+        <h3>Business guide</h3>
+        <p id="assistant-answer">Try the Idea Lab for starter suggestions, or ask a business question below.</p>
+        <form id="assistant-form">
+          <input id="assistant-question" placeholder="Ask: How do I price my handmade products?" required maxlength="250">
+          <button class="button button-small">Ask guide</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="calculator">
+    <div class="calculator-layout">
+      <div>
+        <span class="eyebrow">KNOW YOUR NUMBERS</span>
+        <h2>Price with <em>confidence.</em></h2>
+        <p>Estimate your selling price and profit before you list a product. This simple calculator is a planning aid, not accounting advice.</p>
+        <div class="calculator-tip">Tip: Include materials, packaging, delivery and your time when estimating costs.</div>
+      </div>
+
+      <form id="profit-form" class="calculator-card">
+        <h3>Profit calculator</h3>
+        <label>Cost to make one item (₹)
+          <input type="number" id="unit-cost" min="0" step="0.01" value="120" required>
+        </label>
+        <label>Other cost per item (₹)
+          <input type="number" id="other-cost" min="0" step="0.01" value="30" required>
+        </label>
+        <label>Selling price (₹)
+          <input type="number" id="selling-price" min="0" step="0.01" value="250" required>
+        </label>
+        <button class="button" type="submit">Calculate estimate</button>
+        <div id="profit-result" class="profit-result" aria-live="polite">Estimated profit per item: <strong>₹100.00</strong></div>
+      </form>
+    </div>
+  </section>
+
+  <section class="section tinted" id="mentorship">
+    <div class="section-heading">
+      <div>
+        <span class="eyebrow">YOU DON'T HAVE TO DO IT ALONE</span>
+        <h2>Guidance makes <em>growth possible.</em></h2>
+        <p>Tell us what support you need. Your request will be saved to your SheRise account.</p>
+      </div>
+    </div>
+
+    <form id="mentor-form" class="mentor-form">
+      <label>What would you like help with?
+        <input name="topic" required minlength="3" maxlength="120" placeholder="e.g. Marketing my home bakery">
+      </label>
+      <label>Your goals
+        <textarea name="goals" required minlength="10" maxlength="1000" placeholder="Share what you are building and where you need guidance…"></textarea>
+      </label>
+      <label>Preferred contact (email or phone)
+        <input name="preferredContact" required minlength="3" maxlength="150" placeholder="Your preferred contact detail">
+      </label>
+      <button class="button">Send mentorship request</button>
+      <p id="mentor-status" class="form-status" aria-live="polite"></p>
+    </form>
+  </section>
+
+  <section class="section" id="funding">
+    <div class="section-heading">
+      <div>
+        <span class="eyebrow">FIND SUPPORT</span>
+        <h2>Explore funding & <em>support resources.</em></h2>
+        <p>Starter information and official links. Always verify current terms and eligibility with the provider.</p>
+      </div>
+    </div>
+    <div id="funding-list" class="funding-grid">
+      <p class="muted">Loading resources…</p>
+    </div>
+  </section>
+
+  <section class="cta">
+    <span class="eyebrow">YOUR JOURNEY STARTS HERE</span>
+    <h2>Bring your idea.<br><em>We'll help you take the next step.</em></h2>
+    <button class="button button-light" id="cta-register">Create your free account</button>
+  </section>
+</main>
+
+<footer>
+  <a class="brand" href="#home"><span class="brand-mark">S</span> SheRise</a>
+  <p>Empowering women, inspiring entrepreneurs, building a better future.</p>
+  <small>SheRise is an educational project. Funding links and business guidance are informational, not financial or legal advice.</small>
+</footer>
+
+<!-- AUTHENTICATION MODAL -->
+<div id="auth-modal" class="modal" hidden>
+  <div class="modal-card">
+    <button class="modal-close" data-close="auth-modal" aria-label="Close">×</button>
+    <span class="eyebrow">WELCOME TO SHERISE</span>
+    <h2 id="auth-title">Create your account</h2>
+    <form id="auth-form">
+      <label id="name-field">Full name
+        <input name="fullName" minlength="2" maxlength="100" autocomplete="name">
+      </label>
+      <label>Email address
+        <input name="email" type="email" required autocomplete="email">
+      </label>
+      <label>Password
+        <input name="password" type="password" required minlength="8" maxlength="72" autocomplete="current-password">
+      </label>
+      <button class="button full-width" id="auth-submit">Create account</button>
+      <p id="auth-status" class="form-status" aria-live="polite"></p>
+    </form>
+    <p class="switch-auth">
+      <span id="switch-copy">Already have an account?</span>
+      <button id="switch-auth" class="text-button">Log in</button>
+    </p>
+  </div>
+</div>
+
+<!-- BUSINESS LISTING MODAL -->
+<div id="listing-modal" class="modal" hidden>
+  <div class="modal-card modal-wide">
+    <button class="modal-close" data-close="listing-modal" aria-label="Close">×</button>
+    <span class="eyebrow">SHOWCASE YOUR WORK</span>
+    <h2>List your business</h2>
+
+    <form id="listing-form" class="form-grid">
+      <label>Business name
+        <input name="name" required minlength="2" maxlength="100">
+      </label>
+
+      <label>Category
+        <select name="category">
+          <option>Art & Crafts</option>
+          <option>Fashion</option>
+          <option>Food</option>
+          <option>Beauty</option>
+          <option>Home</option>
+          <option>Services</option>
+          <option>Other</option>
+        </select>
+      </label>
+
+      <label class="span-two">What do you offer?
+        <textarea name="description" required minlength="10" maxlength="1500"></textarea>
+      </label>
+
+      <label>Product or service name
+        <input name="productName" required minlength="2" maxlength="100">
+      </label>
+
+      <label>Price (₹)
+        <input name="price" type="number" min="0" step="0.01" required>
+      </label>
+
+      <label>Contact email
+        <input name="contactEmail" type="email" required>
+      </label>
+
+      <!-- NEW CONTACT PHONE FIELD -->
+      <label>Contact phone
+        <input
+          name="contactPhone"
+          type="tel"
+          placeholder="+91 9876543210"
+          required
+          pattern="[+]?[0-9 ()-]{8,20}"
+          title="Enter a valid phone number with country code"
+        >
+      </label>
+
+      <label>City
+        <input name="city" required minlength="2" maxlength="80">
+      </label>
+
+      <button class="button span-two">Publish listing</button>
+      <p id="listing-status" class="form-status span-two" aria-live="polite"></p>
+    </form>
+  </div>
+</div>
+
+<div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+<script src="app.js" defer></script>
+</body>
+</html>
+ 
